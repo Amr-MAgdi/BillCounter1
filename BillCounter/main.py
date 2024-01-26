@@ -13,7 +13,9 @@ def times():
 
 
 def one():
-    m.bill_1.insert(0, str(1))
+     m.bill_1.delete(0,END)
+    m.bill_1.insert(0,"")
+    m.bill_1.insert(0, "1"))
 
 
 def five():
