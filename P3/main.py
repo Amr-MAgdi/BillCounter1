@@ -2,23 +2,25 @@ import csv
 import time
 from tkinter import *
 from tkinter import messagebox
-import window as m
 import pandas as pd
 
 
 def times():
+    import window as m
     current_time = time.strftime("Time: " + " %H:%M:%S \n" + "Date: " + " %d/%m/%Y \n" + "%A")
     m.label9.config(text=current_time)
     m.label9.after(1000, times)
 
 
 def one():
+    import window as m
     m.bill_1.delete(0, END)
     m.bill_1.insert(0, "")
     m.bill_1.insert(0, 1)
 
 
 def five():
+    import window as m
     m.bill_more_1.delete(0, END)
     m.bill_more_1.insert(0, '')
     m.bill_more_1.insert(0, 5)
@@ -26,6 +28,7 @@ def five():
 
 
 def ten():
+    import window as m
     m.bill_more_1.delete(0, END)
     m.bill_more_1.insert(0, '')
     m.bill_more_1.insert(0, 10)
@@ -33,6 +36,7 @@ def ten():
 
 
 def twenty():
+    import window as m
     m.bill_more_1.delete(0, END)
     m.bill_more_1.insert(0, '')
     m.bill_more_1.insert(0, 20)
@@ -40,6 +44,7 @@ def twenty():
 
 
 def fifty():
+    import window as m
     m.bill_more_1.delete(0, END)
     m.bill_more_1.insert(0, '')
     m.bill_more_1.insert(0, 50)
@@ -47,6 +52,7 @@ def fifty():
 
 
 def one_hundred():
+    import window as m
     m.bill_more_1.delete(0, END)
     m.bill_more_1.insert(0, '')
     m.bill_more_1.insert(0, 100)
@@ -54,6 +60,7 @@ def one_hundred():
 
 
 def sum_number():
+    import window as m
     number = m.bill_more_1.get()
     if number:
         total.append(number)
@@ -66,6 +73,7 @@ total = []
 
 
 def on_entry_click(event):
+    import window as m
     # Function to handle the click event on the entry widget
     if m.bag_number.get() == 'Enter the bag number':
         m.bag_number.delete(0, END)
@@ -73,6 +81,7 @@ def on_entry_click(event):
 
 
 def save():
+    import window as m
     bag_number = m.bag_number.get()
     bill = m.bill_1.get()
     Large_bill = m.bill_more_1.get()
@@ -91,11 +100,13 @@ def save():
 
 
 def calculate_sum():
+    import window as m
     total = sum(map(float, entry_values))
     m.amount.config(text=f" {total:.2f}")
 
 
 def add_entry_value():
+    import window as m
     m.bill_1.insert(0, 0)
     entry_value = m.bill_1.get()
     bill = m.bill_more_1.get()
@@ -121,6 +132,13 @@ entry_values = []
 
 
 def empty_box():
+    import window as m
+    m.number = 0
+    m.cash_box.config(text="0")
     m.amount.config(text="0")
+    m.bill_1.delete(0, END)
+    m.bill_more_1.delete(0, END)
+    entry_values.clear()
+    total.clear()
 
 # google_sheet()
