@@ -107,9 +107,8 @@ def calculate_sum():
 
 def add_entry_value():
     import window as m
-    m.bill_1.insert(0, 0)
-    entry_value = m.bill_1.get()
-    bill = m.bill_more_1.get()
+    entry_value = m.bill_1.get() or "0"
+    bill = m.bill_more_1.get() or "0"
     try:
         if entry_value:
             if m.number <= 2:
